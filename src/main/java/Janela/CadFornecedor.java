@@ -5,17 +5,27 @@
  */
 package Janela;
 
+import Objetos.Fornecedor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kaiop
  */
 public class CadFornecedor extends javax.swing.JFrame {
+    Fornecedor forn = new Fornecedor();
+    
 
     /**
      * Creates new form CadFornecedor
      */
     public CadFornecedor() {
         initComponents();
+    }
+    
+    public CadFornecedor(Fornecedor forn) {
+        initComponents();
+        this.forn = forn;
     }
 
     /**
@@ -101,6 +111,9 @@ public class CadFornecedor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -109,15 +122,13 @@ public class CadFornecedor extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
                         .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTNomeRepr)
-                            .addComponent(jTCnpj)
-                            .addComponent(jTRazaoSocial)
-                            .addComponent(jTTelefone)
-                            .addComponent(jTEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTNomeRepr, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                                .addComponent(jTCnpj)
+                                .addComponent(jTRazaoSocial)
+                                .addComponent(jTTelefone)))))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -137,15 +148,15 @@ public class CadFornecedor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBCadastrar)
                     .addComponent(jBLimpar))
@@ -160,11 +171,30 @@ public class CadFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTNomeReprActionPerformed
 
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
-       
+      Fornecedor forn = new Fornecedor();
+      forn.setNomeRepresentante(jTNomeRepr.getText());
+      forn.setEndereco(jTEndereco.getText());
+      forn.setTelefone(jTTelefone.getText());
+      forn.setRazaoSocial(jTRazaoSocial.getText());
+      
+        JOptionPane.showMessageDialog(this,"Fornecedor cadastrado com sucesso\n" + jTEndereco.getText() 
+                + "\n" + jTCnpj.getText()+ "\n" +
+                jTNomeRepr.getText()+ "\n" +
+                jTRazaoSocial.getText() + "\n" +
+                jTTelefone.getText());
+      
+        
+        
+        
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jBLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimparActionPerformed
-       
+       jTCnpj.setText("");
+       jTEndereco.setText("");
+       jTNomeRepr.setText("");
+       jTTelefone.setText("");
+       jTRazaoSocial.setText("");
+        
     }//GEN-LAST:event_jBLimparActionPerformed
 
     /**
