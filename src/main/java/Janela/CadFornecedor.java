@@ -179,11 +179,7 @@ public class CadFornecedor extends javax.swing.JFrame {
       forn.setTelefone(jTTelefone.getText());
       forn.setRazaoSocial(jTRazaoSocial.getText());
       
-        JOptionPane.showMessageDialog(this,"Fornecedor cadastrado com sucesso\n" + jTEndereco.getText() 
-                + "\n" + jTCnpj.getText()+ "\n" +
-                jTNomeRepr.getText()+ "\n" +
-                jTRazaoSocial.getText() + "\n" +
-                jTTelefone.getText());
+        JOptionPane.showMessageDialog(this,"Fornecedor cadastrado com sucesso\n");
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Preencha corretamente os campos!");
