@@ -6,6 +6,7 @@
 package Janela;
 
 import Objetos.Produto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,11 +14,18 @@ import Objetos.Produto;
  */
 public class CadProduto extends javax.swing.JFrame {
 
+    Produto prod = new Produto();
+
     /**
      * Creates new form CadProduto
      */
     public CadProduto() {
         initComponents();
+    }
+
+    public CadProduto(Produto prod) {
+        initComponents();
+        this.prod = prod;
     }
 
     /**
@@ -84,6 +92,11 @@ public class CadProduto extends javax.swing.JFrame {
         });
 
         jButton2.setText("Limpar campos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,11 +189,27 @@ public class CadProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCadastrarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarProdActionPerformed
-        Produto prod = new Produto();
-        
-        
-        
+        try {
+            prod.setFornecedor(jTFornecedor.getText());
+            prod.setDescricao(jTDescricao.getText());
+            prod.setNome(jTNome.getText());
+            prod.setValorUnitario(Double.parseDouble(jTValorunit.getText()));
+            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Preencha corretamente os campos!");
+        }
+
+
     }//GEN-LAST:event_jBCadastrarProdActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      jTNome.setText("");
+      jTFornecedor.setText("");
+      jTQuantidade.setText("");
+      jTValorunit.setText("");
+      jTDescricao.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

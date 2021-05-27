@@ -5,11 +5,16 @@
  */
 package Janela;
 
+import Objetos.Fornecedor;
+import Objetos.Produto;
+
 /**
  *
  * @author kaiop
  */
 public class Principal extends javax.swing.JFrame {
+    Produto prod = new Produto();
+    Fornecedor forn = new Fornecedor();
     
 
     /**
@@ -82,6 +87,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Produto");
 
         jBCadPo.setText("Cadastrar produto");
+        jBCadPo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadPoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -137,12 +147,17 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCadForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadForActionPerformed
-        CadFornecedor cf = new CadFornecedor();
+        CadFornecedor cf = new CadFornecedor(forn);
         cf.setVisible(true);
         
         
         
     }//GEN-LAST:event_jBCadForActionPerformed
+
+    private void jBCadPoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadPoActionPerformed
+       CadProduto prod = new CadProduto();
+       prod.setVisible(true);
+    }//GEN-LAST:event_jBCadPoActionPerformed
 
     /**
      * @param args the command line arguments

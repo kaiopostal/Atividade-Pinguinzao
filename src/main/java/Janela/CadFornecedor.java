@@ -171,7 +171,9 @@ public class CadFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTNomeReprActionPerformed
 
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
-      Fornecedor forn = new Fornecedor();
+  
+      
+        try {Fornecedor forn = new Fornecedor();
       forn.setNomeRepresentante(jTNomeRepr.getText());
       forn.setEndereco(jTEndereco.getText());
       forn.setTelefone(jTTelefone.getText());
@@ -182,8 +184,10 @@ public class CadFornecedor extends javax.swing.JFrame {
                 jTNomeRepr.getText()+ "\n" +
                 jTRazaoSocial.getText() + "\n" +
                 jTTelefone.getText());
-      
-        
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Preencha corretamente os campos!");
+        }
         
         
     }//GEN-LAST:event_jBCadastrarActionPerformed
