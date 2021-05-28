@@ -171,12 +171,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCadForActionPerformed
 
     private void jBCadPoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadPoActionPerformed
-       CadProduto prod = new CadProduto();
-       prod.setVisible(true);
+       CadProduto cp = new CadProduto(prod);
+       cp.setVisible(true);
     }//GEN-LAST:event_jBCadPoActionPerformed
 
     private void jBVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVisualizarActionPerformed
-        CadGeral cad = new CadGeral();
+        CadGeral cad = new CadGeral(forn,prod);
         cad.setVisible(true);
     }//GEN-LAST:event_jBVisualizarActionPerformed
 

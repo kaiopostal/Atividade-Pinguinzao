@@ -11,12 +11,12 @@ package Objetos;
  */
 public class Produto {
     
-    private String nome;
-    private String descricao;
-    private String fornecedor;
-    private int quantidade;
-    private double valorTotal;
-    private double valorUnitario;
+    private String nome = "";
+    private String descricao= "";
+    private String fornecedor= "";
+    private int quantidade = 0;
+    //private double valorTotal;
+    private double valorUnitario = 0;
 
     /**
      * @return the nome
@@ -77,16 +77,7 @@ public class Produto {
     /**
      * @return the valorTotal
      */
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    /**
-     * @param valorTotal the valorTotal to set
-     */
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
+   
 
     /**
      * @return the valorUnitario
@@ -102,4 +93,23 @@ public class Produto {
         this.valorUnitario = valorUnitario;
     }
     
-}
+    
+    public double getValorTotal() {
+        return valorUnitario*quantidade;
+    }
+
+    /**
+     * @param valorTotal the valorTotal to set
+     */
+//    public void setValorTotal(double valorTotal) {
+//        this.valorTotal = valorTotal;
+    }
+    
+    
+    
+    
+    
+    
+    
+   
+    

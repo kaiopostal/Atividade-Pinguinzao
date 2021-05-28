@@ -173,13 +173,13 @@ public class CadFornecedor extends javax.swing.JFrame {
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
   
       
-        try {Fornecedor forn = new Fornecedor();
+        try {
       forn.setNomeRepresentante(jTNomeRepr.getText());
       forn.setEndereco(jTEndereco.getText());
       forn.setTelefone(jTTelefone.getText());
       forn.setRazaoSocial(jTRazaoSocial.getText());
-      
-        JOptionPane.showMessageDialog(this,"Fornecedor cadastrado com sucesso\n");
+      forn.setCnpj(jTCnpj.getText());
+        JOptionPane.showMessageDialog(this,"Fornecedor cadastrado com sucesso");
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Preencha corretamente os campos!");

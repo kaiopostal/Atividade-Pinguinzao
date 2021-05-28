@@ -11,12 +11,12 @@ package Objetos;
  */
 public class Fornecedor {
 
-    private String cnpj;
-    private String nomeRepresentante;
-    private String razaoSocial;
-    private String endereco;
-    private String telefone;
-
+    private String cnpj = "";
+    private String nomeRepresentante= "";
+    private String razaoSocial= "";
+    private String endereco= "";
+    private String telefone= "";
+    
     /**
      * @return the cnpj
      */

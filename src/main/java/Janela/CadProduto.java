@@ -194,6 +194,8 @@ public class CadProduto extends javax.swing.JFrame {
             prod.setDescricao(jTDescricao.getText());
             prod.setNome(jTNome.getText());
             prod.setValorUnitario(Double.parseDouble(jTValorunit.getText()));
+            prod.setQuantidade(Integer.parseInt(jTQuantidade.getText()));
+            
             JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
 
         } catch (Exception e) {
